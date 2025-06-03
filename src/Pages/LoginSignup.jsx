@@ -39,11 +39,11 @@ const LoginSignup = () => {
 
   try {
     const response = await axios.post(url, payload);
-    console.log("Response:", response.data);
 
     if (response.data.success) {
-      alert(response.data.message);
-      if (isLogin && response.data.token) {
+      if (isLogin && response.
+        
+        data.token) {
         localStorage.setItem('authToken', response.data.token);
         localStorage.setItem('userId', response.data.userId);
       }
