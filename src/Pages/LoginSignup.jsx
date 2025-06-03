@@ -37,8 +37,22 @@ const LoginSignup = () => {
 
   try {
     const response = await axios.post(url, payload);
-    
+
     if (response.data.success) {
+      // If login, store token
+      if (isLogin && response.data.token) {
+        localStorage.setItem('authToken', response.data.token);
+        localStorage.setItem('userId', response.data.userId); // if available
+
+        // Optionally: verify token exists
+        const token = localStorage.getItem('authToken');
+        if (token) {
+          console.log('Login successful. Auth token stored:', token);
+        } else {
+          console.warn('Login response had no token.');
+        }
+      }
+
       navigate('/');
     }
   } catch (error) {
@@ -50,6 +64,7 @@ const LoginSignup = () => {
     }
   }
 };
+
 
 
 
