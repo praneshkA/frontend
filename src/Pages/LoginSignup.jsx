@@ -56,7 +56,7 @@ const LoginSignup = () => {
       navigate('/');
     }
   } catch (error) {
-    console.error("Auth error:", error);
+    console.error("Auth error:", error?.response?.data || error.message || error);
     if (error.response) {
       alert(error.response.data.message || 'Something went wrong');
     } else {
