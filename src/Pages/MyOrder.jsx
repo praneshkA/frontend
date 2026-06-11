@@ -18,7 +18,7 @@
         }
 
         try {
-        const res = await fetch('https://fullstackproject-480y.onrender.com/api/my-orders', {
+        const res = await fetch('https://shoppingcart-hzyr.onrender.com/api/my-orders', {
             headers: {
             'Authorization': `Bearer ${token}`,
             },

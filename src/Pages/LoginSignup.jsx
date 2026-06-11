@@ -30,7 +30,7 @@ const LoginSignup = () => {
   e.preventDefault();
 
   const endpoint = isLogin ? '/api/login' : '/api/signup';
-  const url = `https://fullstackproject-480y.onrender.com${endpoint}`;
+  const url = `https://shoppingcart-hzyr.onrender.com${endpoint}`;
   const payload = isLogin
     ? { email: formData.email, password: formData.password }
     : formData;

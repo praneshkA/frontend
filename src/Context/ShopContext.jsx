@@ -14,7 +14,7 @@ const ShopContextProvider = (props) => {
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const response = await axios.get("https://fullstackproject-480y.onrender.com/api/allproducts");
+        const response = await axios.get("https://shoppingcart-hzyr.onrender.com/api/allproducts");
         console.log("Products fetched:", response.data);
         setAllProducts(response.data);
       } catch (error) {
@@ -30,7 +30,7 @@ const ShopContextProvider = (props) => {
   if (!token) return;
 
   try {
-    const response = await axios.get("https://fullstackproject-480y.onrender.com/api/cart", {
+    const response = await axios.get("https://shoppingcart-hzyr.onrender.com/api/cart", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -83,7 +83,7 @@ useEffect(() => {
     }
 
     const response = await axios.post(
-      "https://fullstackproject-480y.onrender.com/api/cart/add",
+      "https://shoppingcart-hzyr.onrender.com/api/cart/add",
       {
         productId: productMongoId,
         quantity: 1,
@@ -120,7 +120,7 @@ const removeFromCart = async (productMongoId) => {
     }
 
     const response = await axios.post(
-      "https://fullstackproject-480y.onrender.com/api/cart/remove",
+      "https://shoppingcart-hzyr.onrender.com/api/cart/remove",
       {
         productId: productMongoId,
         quantity: 1,
